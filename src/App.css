@@ -14,3 +14,7 @@ body, html {
 .blueBG {
   background-color: #4995F6;
 }
+
+a {
+  text-decoration: none;
+}

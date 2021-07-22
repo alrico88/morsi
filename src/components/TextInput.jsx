@@ -21,7 +21,7 @@ function TextInput({ onTextInput, text }) {
           <Form.Group>
             <Form.Control as="textarea" rows="4" onChange={handleInput} value={text} />
           </Form.Group>
-          <a href="#" className="text-decoration-none" onClick={loadExample}>Load example</a>
+          <a href="#" onClick={loadExample}>Load example</a>
         </Form>
       </Col>
     </Row>
