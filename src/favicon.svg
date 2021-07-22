@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="455px" height="455px" viewBox="0 0 455 455" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="455" height="455"></rect>
+        <rect id="Rectangle" stroke="#979797" fill="#0E0E0E" x="138.5" y="261.5" width="179" height="44" rx="8"></rect>
+        <circle id="Oval" stroke="#979797" fill="#0E0E0E" cx="70" cy="202" r="49.5"></circle>
+        <circle id="Oval" stroke="#979797" fill="#0E0E0E" cx="389" cy="202" r="49.5"></circle>
+    </g>
+</svg>
