@@ -7,6 +7,9 @@
     "build": "vite build",
     "serve": "vite preview"
   },
+  "repository": {
+    "url": "https://github.com/alrico88/morsi"
+  },
   "dependencies": {
     "bootstrap": "5.0.2",
     "morsee": "^1.0.9",
