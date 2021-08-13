@@ -21,10 +21,12 @@ export default function playMorse(encoded, onEndFunc) {
   oscillator.frequency.value = 600;
   oscillator.onended = onEndFunc;
 
-  let t = ctx.currentTime + 0.1; // Don't start at 0 because of Firefox missing the first beat
+  let t = ctx.currentTime;
 
   const gainNode = ctx.createGain();
   gainNode.gain.setValueAtTime(0, t);
+
+  t += 0.1; // Don't start at 0 because of Firefox missing the first beat
 
   encoded.split('').forEach((symbol) => {
     switch (symbol) {

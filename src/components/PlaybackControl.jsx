@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import { ImPlay3, ImStop2 } from 'react-icons/im';
 import PropTypes from 'prop-types';
 import playMorse from '../morsePlayer';
@@ -30,18 +30,25 @@ function PlaybackControl({ text }) {
 
   const isDisabled = useMemo(() => encoded.length === 0, [encoded]);
 
-  const buttonText = useMemo(() => (isPlaying ? 'Stop playback' : 'Play Morse code'), [isPlaying]);
-  const buttonIcon = useMemo(() => (isPlaying ? <ImStop2 className="me-1" /> : <ImPlay3 className="me-1" />), [isPlaying]);
+  const playbackButton = useMemo(() => ({
+    text: isPlaying ? 'Stop playback' : 'Play Morse code',
+    icon: isPlaying ? <ImStop2 className="me-1" /> : <ImPlay3 className="me-1" />,
+    variant: isPlaying ? 'secondary' : 'primary',
+  }), [isPlaying]);
 
   return (
     <>
-      <div className="d-flex">
-        <Button className="w-100 me-2 align-middle" onClick={playback} variant="primary" disabled={isDisabled}>
-          {buttonIcon}
-          {buttonText}
-        </Button>
-        <CopyToClip text={encoded} disabled={isDisabled} />
-      </div>
+      <Row>
+        <Col xs={12} md={6} className="mb-2 mb-md-0">
+          <Button className="w-100 align-middle" onClick={playback} variant={playbackButton.variant} disabled={isDisabled}>
+            {playbackButton.icon}
+            {playbackButton.text}
+          </Button>
+        </Col>
+        <Col xs={12} md={6}>
+          <CopyToClip text={encoded} disabled={isDisabled} />
+        </Col>
+      </Row>
     </>
   );
 }
