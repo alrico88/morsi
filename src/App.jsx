@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Container, Row, Col,
 } from 'react-bootstrap';
-import './App.css';
+import './App.scss';
 import Encoded from './components/Encoded';
 import PlaybackControl from './components/PlaybackControl';
 import HeaderTitle from './components/HeaderTitle';
@@ -26,7 +25,7 @@ function App() {
                 <Encoded text={text} />
               </Col>
             </Row>
-            <PlaybackControl text={text} />
+            <PlaybackControl text={text} className="pb-4" />
           </Container>
         </Container>
       </main>

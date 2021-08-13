@@ -2,7 +2,13 @@ const dot = 1.2 / 15;
 
 let oscillator;
 
-export default function playMorse(encoded) {
+/**
+ * Plays morse encoded sentences with HTML5 Audio API
+ * @param {string} encoded Message string in morse code
+ * @param {Function} onEndFunc Function to execute on playback end
+ * @returns {OscillatorNode}
+ */
+export default function playMorse(encoded, onEndFunc) {
   if (oscillator) {
     oscillator.stop();
   }
@@ -13,8 +19,9 @@ export default function playMorse(encoded) {
   oscillator = ctx.createOscillator();
   oscillator.type = 'sine';
   oscillator.frequency.value = 600;
+  oscillator.onended = onEndFunc;
 
-  let t = ctx.currentTime;
+  let t = ctx.currentTime + 0.1; // Don't start at 0 because of Firefox missing the first beat
 
   const gainNode = ctx.createGain();
   gainNode.gain.setValueAtTime(0, t);
@@ -43,4 +50,7 @@ export default function playMorse(encoded) {
   gainNode.connect(ctx.destination);
 
   oscillator.start();
+  oscillator.stop(t);
+
+  return oscillator;
 }

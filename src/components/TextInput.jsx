@@ -1,16 +1,19 @@
 import React from 'react';
-import { Col, Form, Row } from 'react-bootstrap';
+import {
+  Button, Col, Form, Row,
+} from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { ImFileText } from 'react-icons/im';
 
 function TextInput({ onTextInput, text }) {
   function handleInput(e) {
-    onTextInput(e.target.value);
+    onTextInput(e.target.value.toUpperCase());
   }
 
   function loadExample(e) {
     e.preventDefault();
 
-    onTextInput('Hello world');
+    onTextInput('Hello world'.toUpperCase());
   }
 
   return (
@@ -18,10 +21,14 @@ function TextInput({ onTextInput, text }) {
       <Col>
         <Form>
           <Form.Label className="fw-bold">Enter your text here:</Form.Label>
-          <Form.Group>
-            <Form.Control as="textarea" rows="4" onChange={handleInput} value={text} />
+          <Form.Group className="mb-2">
+            <Form.Control as="textarea" rows="4" onChange={handleInput} value={text} className="font-monospace" />
           </Form.Group>
-          <a href="#" onClick={loadExample}>Load example</a>
+          <Button variant="light" onClick={loadExample}>
+            <ImFileText />
+            {' '}
+            Load example
+          </Button>
         </Form>
       </Col>
     </Row>
