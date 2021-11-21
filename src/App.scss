@@ -1,8 +1,8 @@
 $body-bg: #ECF5FD;
 $body-color: #0A1433;
 $primary: #2952CC;
-$font-family-sans-serif: 'Fira Sans';
-$font-family-monospace: 'Fira Mono';
+$font-family-sans-serif: 'Fira Sans', sans-serif;
+$font-family-monospace: 'Fira Mono', monospace;
 
 @import "node_modules/bootstrap/scss/bootstrap";
 

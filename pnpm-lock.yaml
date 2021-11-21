@@ -23,6 +23,7 @@ specifiers:
   sass: ^1.37.5
   vite: ^2.4.2
   vite-plugin-pwa: ^0.10.0
+  workbox-window: ^6.4.1
 
 dependencies:
   '@fontsource/fira-mono': 4.5.0
@@ -49,6 +50,7 @@ devDependencies:
   eslint-plugin-react-hooks: 4.2.0_eslint@7.32.0
   vite: 2.4.4
   vite-plugin-pwa: 0.10.0_vite@2.4.4
+  workbox-window: 6.4.1
 
 packages:
 
@@ -3619,7 +3621,7 @@ packages:
       rollup: 2.56.2
       vite: 2.4.4
       workbox-build: 6.2.4
-      workbox-window: 6.2.4
+      workbox-window: 6.4.1
     transitivePeerDependencies:
       - '@types/babel__core'
       - supports-color
@@ -3749,6 +3751,10 @@ packages:
     resolution: {integrity: sha512-Nu8X4R4Is3g8uzEJ6qwbW2CGVpzntW/cSf8OfsQGIKQR0nt84FAKzP2cLDaNLp3L/iV9TuhZgCTZzkMiap5/OQ==}
     dev: true
 
+  /workbox-core/6.4.1:
+    resolution: {integrity: sha512-5hosqpSK+48jHlj+5EHN5dtH1Ade4fqTe4+xX3U9wWK1SDaXEqXpVxdHuBqYfg75UE1PUINA0rhMZWTqeGoLFg==}
+    dev: true
+
   /workbox-expiration/6.2.4:
     resolution: {integrity: sha512-EdOBLunrE3+Ff50y7AYDbiwtiLDvB+oEIkL1Wd9G5d176YVqFfgPfMRzJQ7fN+Yy2NfmsFME0Bw+dQruYekWsQ==}
     dependencies:
@@ -3824,6 +3830,13 @@ packages:
     dependencies:
       '@types/trusted-types': 2.0.2
       workbox-core: 6.2.4
+    dev: true
+
+  /workbox-window/6.4.1:
+    resolution: {integrity: sha512-v5G1U+NN0sHErvE9fzHRA75FrfRFj/0dihFnvno5yqHZZIb9G4U2AarodSDRBC3t6CsnLO68l1Bj1gsHqsM9Qw==}
+    dependencies:
+      '@types/trusted-types': 2.0.2
+      workbox-core: 6.4.1
     dev: true
 
   /wrappy/1.0.2:
